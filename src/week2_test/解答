@@ -1,0 +1,146 @@
+//➀インターフェースの作成
+public interface Printx {
+	//空のメソッドを作成
+	void printx();
+}
+
+public class Rectangle implements Printx {
+   protected double height;
+   protected double width;
+
+    public Rectangle(double height, double width) {
+        this.height = height;
+        this.width = width;
+    }
+
+    protected double getArea() {
+        return height * width;
+    }
+
+    protected double getPerimeter() {
+        return (height + width) * 2;
+    }
+
+    @Override
+    public void printx() {
+        System.out.println("長方形の高さ：" + height
+                + "、幅：" + width
+                + "、面積：" + getArea()
+                + "、周長：" + getPerimeter()
+        );
+    }
+}
+public class Square extends Rectangle {
+    public Square(double side) {
+        super(side, side);
+    }
+
+    @Override
+    public void printx() {
+        System.out.println("正方形の辺の長さ：" + super.width
+                + "、面積：" + super.getArea()
+                + "、周長：" + super.getPerimeter()
+        );
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+public enum Week {
+
+    MON("月曜日"), TUE("火曜日"), WED("水曜日"), THR("木曜日"),
+    FRI("金曜日"), SAT("土曜日"), SUN("日曜日");
+
+    private String japaneseName;
+
+    private Week(String japaneseName) {
+        this.japaneseName = japaneseName;
+    }
+
+    public String getJapaneseName() {
+        return this.japaneseName;
+    }
+}
+
+public class Main {
+
+	public static void main(String[] args) {
+
+		System.out.println(Week.MON+"の和名は"+Week.MON.getJapaneseName());
+
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+public class Teacher {
+	private String name;
+	private String subject;
+	private static Teacher teacher = new Teacher();
+
+	private Teacher() {
+		name ="Alice";
+		subject ="Japanese";
+	}
+	public void teach() {
+		System.out.println("Hello");
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getSubject() {
+		return subject;
+	}
+	public void setSubject(String subject) {
+		this.subject = subject;
+	}
+	public static Teacher getTeacher() {
+		return teacher;
+	}
+	public static void setTeacher(Teacher teacher) {
+		Teacher.teacher = teacher;
+	}
+
+}
+
+
+public class Main {
+
+	public static void main(String[] args) {
+	
+		Teacher teacher = Teacher.getTeacher();
+		System.out.println("name :" + teacher.getName());
+		System.out.println("subject :" + teacher.getSubject());
+		teacher.teach();
+	}
+
+}
+
+
+
+

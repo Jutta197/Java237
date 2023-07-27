@@ -1,0 +1,79 @@
+# ２章総まとめ演習問題
+
+問題１
+
+プログラムの目的：
+このプログラムは、走るものを表現するインタフェース「Runnable」を含む、Javaクラスのセットを定義します。具体的には、「Person」という人の親クラス、その子クラスである「Student」、および「Car」という車のクラスが定義されています。
+
+1. インタフェース「Runnable」の仕様：
+    - メソッド「run()」を持つ。
+    - 「run()」メソッドは、走る操作を表現するために使用される。
+2. クラス「Person」の仕様：
+    - 人の情報を表現する。
+    - フィールド：
+        - protected修飾子を持つString型の「name」フィールド：人の名前を格納する。
+        - protected修飾子を持つint型の「age」フィールド：人の年齢を格納する。
+    - コンストラクタ：
+        - 引数として「name」と「age」を受け取り、それぞれのフィールドに設定する。
+    - メソッド：
+        - 「introduce()」メソッド：自己紹介を行う。コンソールに「My name is [name]. I am [age] years old.」と表示する。
+3. クラス「Student」の仕様：
+    - クラス「Person」を継承し、インタフェース「Runnable」を実装する。
+    - 学生の情報を表現する。
+    - フィールド：
+        - private修飾子を持つString型の「studentId」フィールド：学生の学籍番号を格納する。
+    - コンストラクタ：
+        - 引数として「name」、「age」、「studentId」を受け取り、それぞれのフィールドに設定する。
+    - メソッド：
+        - 「run()」メソッド（インタフェース「Runnable」の実装）：学生が走る操作を表現する。コンソールに「[name] is running.」と表示する。
+4. クラス「Car」の仕様：
+    - インタフェース「Runnable」を実装する。
+    - 車の情報を表現する。
+    - フィールド：
+        - private修飾子を持つString型の「brand」フィールド：車のブランド名を格納する。
+    - コンストラクタ：
+        - 引数として「brand」を受け取り、フィールドに設定する。
+    - メソッド：
+        - 「run()」メソッド（インタフェース「Runnable」の実装）：車が走る操作を表現する。コンソールに「[brand] cars on the road.」と表示する。
+        - 「getBrand()」メソッド：車のブランド名を取得する。
+        - 「setBrand()」メソッド：引数として受け取った「brand」をフィールドに設定する。
+5. クラス「Main」の仕様：
+    - プログラムのエントリーポイントとなるクラス。
+    - メインメソッド内の要件：
+        - 生徒のインスタンスを作成し、自己紹介させる。
+        - 生徒のインスタンスで「run()」メソッドを呼び出す。
+        - 車のインスタンスを作成し、走らせる。
+        - 車のブランド名を表示する。
+        
+        提供コード
+        
+        ```java
+        public class Main {
+         public static void main(String[] args) {
+             // 以下の要件に従ってコードを追加してください
+        
+             // 1. 生徒のインスタンスを作成し、自己紹介させてください
+             Student student = new Student("Taro", 20, "20230001");
+             student.introduce();
+        
+             // 2. 生徒のインスタンスでrunメソッドを呼び出してください
+             student.run();
+        
+             // 3. 車のインスタンスを作成し、走らせてください
+             Car car = new Car("Toyota");
+             car.run();
+             System.out.println("The brand name of the car is"+ car.getBrand());
+         }
+        }
+        ```
+        
+        実行結果
+        
+        ```java
+        My name is Taro.I am 20 years old.
+        Taro is running.
+        Toyotacars on the road.
+        The brand name of the car isToyota
+        ```
+        
+       

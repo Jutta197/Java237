@@ -1,0 +1,113 @@
+> 問題1
+> 
+
+以下の内容に沿うように実装してください
+
+- 作成ファイル
+
+　　・Main.java（実行ファイル）
+
+　　・Student.java(クラスファイル)
+
+**Student.javaについて以下の内容に合うように作成して下さい**
+
+- メンバ変数（アクセス修飾子はすべてprivateとする）
+
+　　・String型のname
+
+　　・int型のage　
+
+　　・int型のscore
+
+- name,age,scoreの三つを受け取ることができるコンストラクタを作成してください
+
+　　アクセス修飾子はpublicとしてください
+
+- name,age,scoreに対して、それぞれにゲッター及びセッターを記述してください。
+
+　　メソッドのアクセス修飾子はすべてpublicとしてください。
+
+- toStringを記述してください
+
+**Main.javaについて以下の内容に合うように作成してください**
+
+- Listを作成し、ジェネリクス内をStudentとしてください.
+- Listの変数名は「student」としてください
+- Listは,new ArrayListで作成するようにして下さい
+- List内に下記のインスタンスを格納してください
+
+```java
+　　new Student("Alice",15,60)
+		new Student("Takuya",12,90)
+		new Student("Ryo",25,34)
+		new Student("Suzanu",18,20)
+```
+
+・以下の条件に従ってデータを抽出し、コンソールに表示させてください
+
+　1:生徒の点数が60点未満を抽出
+
+    2:生徒の点数を大⇒小に並び替える
+
+実行結果
+[Student [name=Ryo, age=25, score=34], Student [name=Suzanu, age=18, score20]：
+
+
+
+> 問題2
+> 
+
+　Main.java（実行クラス）を作成し、以下の要件に従ってソースを書いて下さい
+
+　1：nikujaga.txtファイルを作成する
+
+　　　try-catchを使用し、もしファイルが存在しない場合はファイルを作成する
+　　　catchのエラークラスは、IOExceptionとし、e.printStackTrace()でエラーの詳細を見れるよう
+
+　　　にする
+
+2：ファイルの書き込みを行う
+
+　FileWriter と BufferedWriter を使用し以下の内容を書き込む
+　　「carrot」、「potato」、「meat」、「onion」
+　各内容は改行された状態で書き込むこと
+例
+　　carrot
+　　potato
+　　meat
+　　onion
+
+FileWriter 及びBufferedWriterを使用する際には、try-width-resource文を使用し、
+catch内は、FileNotFoundException及びIOExceptionを記載する
+FileNotFoundExceptionはファイルが見つかりませんとコンソールに出力するようにする
+
+IOExceptionは、e.printStackTrace()でエラーの詳細を見れるようにする
+
+３:ファイルの読み込みを行う
+FileReader と BufferedReaderを使用し、改行した状態のままファイルの内容が出力されるようにする
+
+FileReader 及びBufferedReaderを使用する際には、try-width-resource文を使用し、
+catch内は、FileNotFoundException及びIOExceptionを記載する
+FileNotFoundExceptionはファイルが見つかりませんとコンソールに出力するようにする
+
+IOExceptionは、e.printStackTrace()でエラーの詳細を見れるようにする
+
+4：実行結果
+
+carrot
+potato
+meat
+onion
+
+
+
+
+
+
+
+
+
+
+
+
+
